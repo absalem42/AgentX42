@@ -1,11 +1,6 @@
 # AgentX42
 # Identity-Employees-in-Surveillance-CCTV  
-**Kaggle Comjupyter lab
-```
-
-Tip: On Kaggle, simply "Copy & Edit" and hit Save & Run All – GPU T4 runtime is automatically provisioned.
-
-## Methodologytion Solution – EfficientNet-B0 + ArcFace**
+**Kaggle Competition Solution – EfficientNet-B0 + ArcFace**
 
 A complete, **reproducible pipeline** for detecting and identifying authorized employees in CCTV frames.  
 The notebook trains an **EfficientNet-B0 backbone with an ArcFace head**, augments the provided reference photos with video-frame extractions, filters by face quality, grid-searches optimal thresholds, and finally produces a `submission.csv`.
@@ -73,9 +68,11 @@ unzip identity-employees-in-surveillance-cctv.zip -d kaggle/input
 
 # 4. Launch notebook and Run-All
 jupyter lab
+```
+
 Tip: On Kaggle, simply “Copy & Edit” and hit Save & Run All – GPU T4 runtime is automatically provisioned.
 
-Methodology
+## Methodology
 Aggressive augmentation on CCTV images (crop, JPEG artefacts, blur, perspective, erasing) to mimic surveillance variability.
 
 ArcFace head provides angular margin for better class separation; cosine similarities are later reused for gallery matching.
@@ -114,6 +111,7 @@ python infer.py \
   --p_th 0.58 \
   --tau 0.46 \
   --out submission.csv
+```
 Outputs a submission.csv ready for Kaggle upload:
 
 ```csv
